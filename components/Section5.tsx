@@ -43,7 +43,7 @@ export default function Section5() {
                   Loudest à la Madison #1 (Lintegral)
                 </h1>
                 <p className=" text-[#737373] w-[280px]">
-                  We focus on ergonomics and meeting you where you work. It's
+                  We focus on ergonomics and meeting you where you work. Its
                   only a keystroke away.
                 </p>
                 <div className=" flex justify-between">
@@ -82,7 +82,7 @@ export default function Section5() {
                   Loudest à la Madison #1 (Lintegral)
                 </h1>
                 <p className=" text-[#737373] w-[280px]">
-                  We focus on ergonomics and meeting you where you work. It's
+                  We focus on ergonomics and meeting you where you work. Its
                   only a keystroke away.
                 </p>
                 <div className=" flex justify-between">
@@ -121,7 +121,7 @@ export default function Section5() {
                   Loudest à la Madison #1 (Lintegral)
                 </h1>
                 <p className=" text-[#737373] w-[280px]">
-                  We focus on ergonomics and meeting you where you work. It's
+                  We focus on ergonomics and meeting you where you work. Its
                   only a keystroke away.
                 </p>
                 <div className=" flex justify-between">
