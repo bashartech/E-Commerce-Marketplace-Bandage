@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
-
+import Link from "next/link";
 export default function Footer() {
   return (
     <div>
@@ -26,17 +26,37 @@ export default function Footer() {
             <div className="footer mt-10 md:flex gap-14 grid grid-cols-2 p-5 md:p-0 pl-16 md:pl-0 md:w-full md:h-[270px]">
                <div className='flex flex-col gap-3'>
                 <h1 className='font-bold'>Company Info</h1>
+                <Link href={"/about"}>
                 <p>About Us</p>
+                
+              </Link>
+              <Link href={"/pricing"}>
                 <p>Carrier</p>
-                <p>We are hiring</p>
+              
+              </Link>
+              <Link href={"/shop"}>
+                <p>Shopping</p>
+              </Link>
+              <Link href={"/about"}>
                 <p>Blog</p>
+              </Link>
                </div>
                <div className='flex flex-col gap-3'>
                <h1 className='font-bold'>Legal</h1>
+               <Link href={"/about"}>
                 <p>About Us</p>
+                
+              </Link>
+              <Link href={"/pricing"}>
                 <p>Carrier</p>
-                <p>We are hiring</p>
+              
+              </Link>
+              <Link href={"/shop"}>
+                <p>Shopping</p>
+              </Link>
+              <Link href={"/about"}>
                 <p>Blog</p>
+              </Link>
                </div>
                <div className='flex flex-col gap-3'>
                <h1 className='font-bold'>Features</h1>

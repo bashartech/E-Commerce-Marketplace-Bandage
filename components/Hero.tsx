@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 import { Button } from "@/components/ui/button"
 export default function HeroPage() {
   return (
@@ -10,7 +11,9 @@ export default function HeroPage() {
         <p className='w-[376px] text-center md:text-start text-[20px]'>We know how large objects will act, 
         but things on a small scale.</p>
         <div className='w-[221px] h-[62px]  flex justify-center items-center md:items-start '>
+        <Link href={"/shop"}>
         <Button className='font-bold  text-[24px] w-[221px] h-[62px] bg-[#2DC071]'>SHOP NOW</Button>
+              </Link>
         </div>
 
 
