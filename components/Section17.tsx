@@ -13,8 +13,8 @@ export default function Section17() {
 
        <div className='md:w-screen flex justify-center items-center md:h-[92px]'
         >
-            <div className='md:w-[1049px] gap-5 md:h-full flex flex-col items-center'>
-            <h1 className='text-[40px] font-bold text-[#252B42]'>Big Companies Are Here
+            <div className='md:w-[1049px] p-4 md:p-0 gap-5 md:h-full flex flex-col items-center'>
+            <h1 className='text-[40px] text-center md:text-start font-bold text-[#252B42]'>Big Companies Are Here
             </h1>
             <p className='md:w-[547px] text-center'>Problems trying to resolve the conflict between 
             the two major realms of Classical physics: Newtonian mechanics </p>

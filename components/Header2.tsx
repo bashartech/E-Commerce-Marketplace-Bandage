@@ -49,13 +49,13 @@ export default function Header2() {
             <p className="font-bold text-[#23A6F0] md:flex hidden">
               Login / Register
             </p>
-            <div className=" flex justify-center items-center gap-2">
+            <div className=" text-lg flex justify-center items-center gap-2">
               <i className="bx bx-search-alt-2"></i>
               <i className="bx bx-cart"></i>
-              <i className="bx bx-heart"></i>
+              <i className="bx bx-heart "></i>
               <i
-                onClick={handleMenu}
                 className="bx bx-menu-alt-right md:hidden"
+                onClick={handleMenu}
               ></i>
             </div>
           </div>

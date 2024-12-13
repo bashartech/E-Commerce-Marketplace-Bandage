@@ -15,7 +15,7 @@ export default function Section20() {
             </div>
             <div className='lg:w-[985px] grid lg:grid-cols-3 lg:h-[403px] gap-20 lg:gap-0 '>
                 <div className="box flex flex-col justify-center items-center gap-5 w-[327px] h-full">
-                    <div className='w-full h-full flex flex-col justify-center items-center gap-5'>
+                    <div className='w-full h-full flex flex-col justify-center items-center gap-5 '>
                         <div className="icon">
                         <i className='bx bx-phone text-8xl text-[#23A6F0] '></i>
                         </div>
@@ -30,7 +30,7 @@ export default function Section20() {
                     </div>
 
                 </div>
-                <div className="box bg-[#252B42] text-white flex flex-col justify-center items-center gap-5 w-[327px] h-full">
+                <div className="box bg-[#252B42] text-white flex flex-col justify-center items-center gap-5 w-[327px] p-4 lg:p-0 h-full">
                     <div className='w-full h-full flex flex-col justify-center items-center gap-5'>
                         <div className="icon">
                         <i className='bx bx-current-location text-8xl text-[#23A6F0]'></i>

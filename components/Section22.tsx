@@ -17,8 +17,8 @@ export default function Section22() {
           </div>
         </div>
       </div>
-      <div className="w-screen flex flex-col justify-center items-center h-[320px]">
-        <div className="w-[427px] gap-5 flex flex-col justify-center items-center h-[180px]">
+      <div className="lg:w-screen p-5 lg:p-0 flex flex-col justify-center items-center h-[320px]">
+        <div className="lg:w-[427px] gap-5 flex flex-col justify-center items-center h-[180px]">
           <p className="text-[#252B42] text-[40px] font-bold">Pricing</p>
           <p>
             Problems trying to resolve the conflict between the two major realms
