@@ -34,13 +34,13 @@ export default function Header2() {
               <Link href={"/about"}>
               <li>About</li>
               </Link>
-              <Link href={"/pricing"}>
+              <Link href={"/product"}>
               <li>Blog</li> 
               </Link>
               <Link href={"/contact"}>
               <li>Contact</li>
               </Link>
-              <Link href={"/product"}>
+              <Link href={"/pricing"}>
               <li>Pages</li>
               </Link>
             </ul>
