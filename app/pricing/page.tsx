@@ -9,7 +9,7 @@ import React from 'react'
 
 export default function PricingPage() {
   return (
-    <div>
+    <div className='overflow-hidden'>
         <Header3/>
       <Section22/>
       <Section23/>
