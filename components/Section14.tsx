@@ -4,7 +4,7 @@ export default function Section14() {
   return (
     <div>
       <div className=" lg:w-screen lg:flex justify-center items-center lg:h-[236px] ">
-        <div className="lg:h-[188px] p-4 md:p-0 lg:flex items-center justify-between lg:w-[1018px]">
+        <div className="lg:h-[188px] p-4 lg:p-0 lg:flex items-center justify-between lg:w-[1018px]">
           <div className="lg:w-[395px] flex flex-col justify-center h-[188px]">
             <h1 className="text-[#E74040]">Problems trying</h1>
             <p className="text-[#252B42] text-[24px] font-bold">

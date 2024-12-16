@@ -5,12 +5,12 @@ export default function Section19() {
     <div>
       <div className='lg:w-screen flex justify-center items-center 
         lg:h-[882px]  bg-[url("/images/img83.svg")]'>
-        <div className='lg:w-[1050px]   lg:h-[742px]'>
-            <div className='lg:w-[599px] gap-[20px] lg:h-full flex flex-col justify-center  text-[#252B42]'>
+        <div className='lg:w-[1050px] pl-8  lg:h-[742px]'>
+            <div className='lg:w-[599px] gap-[20px] lg:h-full flex flex-col lg:items-start md:items-center justify-center  text-[#252B42]'>
                 <h1 className='font-bold'>CONTACT US</h1>
-                <h1 className='w-[378px] font-bold text-[58px]'>Get in touch 
+                <h1 className='w-[378px] font-bold text-[58px] md:text-center lg:text-start'>Get in touch 
                 today!</h1>
-                <p className='w-[376px]'>We know how large objects will act, 
+                <p className='w-[376px] md:text-center lg:text-start'>We know how large objects will act, 
                 but things on a small scale</p>
                 <div className='flex flex-col gap-5'>
                 <p className='font-bold'>Phone ; +451 215 215 </p>

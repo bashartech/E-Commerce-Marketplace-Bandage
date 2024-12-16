@@ -7,7 +7,7 @@ export default function Section22() {
       <div className="w-screen flex flex-col justify-center items-center h-[320px]">
         <div className="w-[427px] flex flex-col justify-center items-center h-[180px]">
           <h1 className="font-bold ">PRICING</h1>
-          <p className="text-[#252B42] text-[58px] font-bold">Simple Pricing</p>
+          <p className="text-[#252B42] text-[50px] md:text-[58px] font-bold">Simple Pricing</p>
           <div>
             <div className="flex">
               <h1 className=" text-[#252B42]">Home</h1>

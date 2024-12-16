@@ -39,7 +39,7 @@ export default function Section10() {
             </div>
           </div>
           <div className="right flex justify-center  pt-5 lg:w-1/2">
-            <div className="lg:w-[510px] w-[400px] flex flex-col  gap-5 lg:h-[471px]">
+            <div className="lg:w-[510px] p-8  w-[400px] flex flex-col  gap-5 lg:h-[471px]">
               <h1 className="text-[20px] font-bold">Floating Phone</h1>
               <div className=" flex gap-3">
                 <div className="icon  text-[#F3CD03]">
