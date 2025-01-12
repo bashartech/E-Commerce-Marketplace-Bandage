@@ -17,7 +17,7 @@ interface Product {
     ratingCount: number;
     tags: string[];
     sizes: string[];
-    image: any;
+    image: string;
     slug: {
       current: string;
     };
@@ -46,6 +46,13 @@ export default function Section2() {
         return (
           <div className="text-center text-red-600 p-4">
             <p>{error}</p>
+          </div>
+        );
+      }
+      if (loading) {
+        return (
+          <div className="flex justify-center items-center h-screen">
+            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
           </div>
         );
       }

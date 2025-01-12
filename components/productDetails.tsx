@@ -17,7 +17,7 @@ interface Product {
   ratingCount: number;
   tags: string[];
   sizes: string[];
-  image: any;
+  image: string;
 }
 
 export default function ProductDetails({
