@@ -2,6 +2,7 @@ import React from 'react'
 import Header1b from './Header1b'
 import Header2 from './Header2'
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Section6() {
 
@@ -27,20 +28,26 @@ export default function Section6() {
 
         </div>
         <div className='lg:w-screen lg:h-[271px] flex justify-center items-center'>
+        <Link href={"/shop#shopItem"}>
             <div className='lg:w-[1088px] md:h-full'>
                 <div className="items grid lg:grid-cols-5 md:grid-cols-2 gap-4">
+               
                 <Image
                     src={"/images/img21.svg"}
                     alt="hero image"
                     width={348}
                     height={300}
                   ></Image>
+               
+               
                   <Image
                     src={"/images/img22.svg"}
                     alt="hero image"
                     width={348}
                     height={300}
                   ></Image>
+               
+               
                   <Image
                     src={"/images/img23.svg"}
                     alt="hero image"
@@ -63,6 +70,9 @@ export default function Section6() {
                 </div>
 
             </div>
+        </Link>
+
+        
 
         </div>
       </div>

@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import { useCart } from "@/components/cartContext";
 
 export default function Header2() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,9 @@ export default function Header2() {
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  const {cartItems} = useCart()
+  const cartCount = cartItems.length
 
   return (
     <div>
@@ -34,8 +38,8 @@ export default function Header2() {
               <Link href={"/about"}>
               <li>About</li>
               </Link>
-              <Link href={"/product"}>
-              <li>Blog</li> 
+              <Link href={"/cart"}>
+              <li>Cart</li> 
               </Link>
               <Link href={"/contact"}>
               <li>Contact</li>
@@ -51,10 +55,17 @@ export default function Header2() {
             </p>
             <div className=" text-lg flex justify-center items-center gap-2">
               <i className="bx bx-search-alt-2"></i>
-              <i className="bx bx-cart"></i>
-              <i className="bx bx-heart "></i>
+            
+              <div>
+              <Link href={"/cart"} className='flex justify-center items-center'>
+              
+            <i className="bx bx-cart text-2xl"></i>
+            <span className="bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">{cartCount}</span>
+              </Link>
+            </div>
+              <i className="bx bx-heart text-2xl "></i>
               <i
-                className="bx bx-menu-alt-right md:hidden"
+                className="bx bx-menu-alt-right text-2xl md:hidden"
                 onClick={handleMenu}
               ></i>
             </div>
@@ -62,7 +73,7 @@ export default function Header2() {
         </div>
       </div>
       <div
-        className={`bar md:hidden bg-white ${
+        className={`bar text-2xl md:hidden bg-white ${
           isOpen ? " h-[350px] opacity-100" : "h-0 opacity-0"
         } `}
       >

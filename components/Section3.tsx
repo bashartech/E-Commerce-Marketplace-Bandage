@@ -14,7 +14,7 @@ export default function Section3() {
 <p className=' w-[341px] text-center md:text-start'>We know how large objects will act, We know how are objects will act, We know</p>
 <div className=' flex gap-4 items-center'>
     <p className='font-bold text-[24px] '>$16.48</p>
-    <Link href={"/pricing"}>
+    <Link href={"/cart"}>
     <Button className='font-bold text-[24px]w-[184px] h-[52px] bg-[#2DC071] '>ADD TO CART</Button>
             
               </Link>

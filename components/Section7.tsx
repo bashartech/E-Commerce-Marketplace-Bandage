@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Section7() {
   return (
@@ -9,7 +10,7 @@ export default function Section7() {
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
           />
-
+<Link href={"/shop#shopItem"}>
        <div className='w-screen flex justify-center items-center h-[92px]'
         >
             <div className='w-[1049px] h-full flex justify-between items-center'>
@@ -30,12 +31,16 @@ export default function Section7() {
                     width={141}
                     height={50}
                   ></Image>
+                  
             <Button className='font-bold text-[16px]w-[94px] h-[52px] bg-[#23A6F0] border-[1px] rounded '>Filter</Button>
+                 
 
             </div>
             </div>
 
         </div>
+</Link>
+
         <div className='md:w-screen p-10 md:p-0 md:h-[225px] mb-14 flex justify-center items-center'>
             <div className='md:w-[1088px] flex justify-center items-center md:h-full'>
                 <div className="items justify-center items-center grid md:grid-cols-6 grid-cols-2 gap-4">

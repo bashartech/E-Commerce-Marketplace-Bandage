@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Section5() {
   return (
@@ -56,10 +57,12 @@ export default function Section5() {
                     <h1>10 comments</h1>
                   </div>
                 </div>
+                <Link href={"https://sanity-blog-sand-theta.vercel.app/"}>
                 <div className="flex gap-2 items-center">
                   <h1 className="font-bold text-[#737373]">Learn More</h1>
                   <i className='bx bx-chevron-right text-3xl text-[#23A6F0]'  ></i>
                 </div>
+                </Link>
                 </div>
               </div>
               <div className="box w-[328px] h-[606px]">
@@ -95,10 +98,12 @@ export default function Section5() {
                     <h1>10 comments</h1>
                   </div>
                 </div>
+                <Link href={"https://sanity-blog-sand-theta.vercel.app/"}>
                 <div className="flex gap-2 items-center">
                   <h1 className="font-bold text-[#737373]">Learn More</h1>
                   <i className='bx bx-chevron-right text-3xl text-[#23A6F0]'  ></i>
                 </div>
+                </Link>
                 </div>
               </div>
               <div className="box w-[328px] h-[606px]">
@@ -134,10 +139,12 @@ export default function Section5() {
                     <h1>10 comments</h1>
                   </div>
                 </div>
+                <Link href={"https://sanity-blog-sand-theta.vercel.app/"}>
                 <div className="flex gap-2 items-center">
                   <h1 className="font-bold text-[#737373]">Learn More</h1>
                   <i className='bx bx-chevron-right text-3xl text-[#23A6F0]'  ></i>
                 </div>
+                </Link>
                 </div>
               </div>
             </div>
