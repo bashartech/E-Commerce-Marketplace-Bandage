@@ -28,10 +28,12 @@ import React from 'react'
             <div className="three flex gap-2 justify-center items-center">
                 <p className='font-bold'>Follow Us  :</p>
                 <div className=' gap-2 flex'>
+                  <ul className='gap-2 flex'>
                 <i className='bx bxl-instagram'></i>
                 <i className='bx bxl-youtube'  ></i>
                 <i className='bx bxl-facebook-circle'  ></i>
                 <i className='bx bxl-twitter'  ></i>
+                  </ul>
                 </div>
 
             </div>

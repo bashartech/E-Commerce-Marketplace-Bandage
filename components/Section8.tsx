@@ -323,11 +323,15 @@ export default function Section8() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        <div className="mt-4 flex relative z-10 flex-wrap justify-center gap-2">
           {['Chair', 'Sofa', "Table", "Vase", "Lamp", "Bed"].map((category) => (
             <button
               key={category}
-              onClick={() => setSearchBar(category)}
+              onClick={(e) =>{
+              e.stopPropagation()
+                setSearchBar(category)}
+              } 
+
               className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition-colors duration-300 text-sm font-medium"
             >
               {category}
