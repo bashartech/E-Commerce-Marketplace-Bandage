@@ -34,8 +34,8 @@ setIsOpen(!isOpen)
               <Link href={"/about"}>
               <li>About</li>
               </Link>
-              <Link href={"/product"}>
-              <li>Blog</li> 
+              <Link href={"/cart"}>
+              <li>Cart</li> 
               </Link>
               <Link href={"/contact"}>
               <li>Contact</li>

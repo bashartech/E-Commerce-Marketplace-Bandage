@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import Loader from '@/components/loader'; 
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useCart } from "@/components/cartContext";
@@ -14,11 +15,22 @@ export default function Section9() {
     increaseQuantity,
     decreaseQuantity,
   } = useCart();
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulate data fetching
+    const timeout = setTimeout(() => setIsLoading(false), 3000); // Adjust time as needed
+    return () => clearTimeout(timeout); // Cleanup on component unmount
+  }, []);
   return (
     <>
+    {isLoading ? (
+        <Loader /> // Show loader while loading
+      ) : (
+    <div>
+    <div className="overflow-hidden">
     <Header2/>
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
       <link
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet"
@@ -153,15 +165,17 @@ export default function Section9() {
                     </div>
                   </div>
                 </div>
+                <Link href={"/checkout"}>
                 <button className="w-full bg-green-600 hover:bg-green-700 text-white">
                   Proceed to Checkout
                 </button>
+                </Link>
               </motion.div>
             </div>
 
             <div className="mt-8 text-center">
               <Link href="/home">
-                <button className="text-white border-blue-600 bg-blue-800 p-3 rounded-lg hover:bg-blue-50">
+                <button className="text-white border-blue-600 bg-blue-800 p-3 rounded-lg hover:bg-blue-500">
                   Continue Shopping
                 </button>
               </Link>
@@ -170,6 +184,9 @@ export default function Section9() {
         )}
       </div>
     </div>
+    </div>
+       </div>
+      )}
     </>
   );
 }

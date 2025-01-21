@@ -7,20 +7,20 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface Product {
-    _id: string;
-    name: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    priceWithoutDiscount: number;
-    rating: number;
-    ratingCount: number;
-    tags: string[];
-    sizes: string[];
-    image: string;
-    slug: {
-      current: string;
-    };
+  _id: number;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  priceWithoutDiscount: number;
+  // rating: number;
+  // ratingCount: number;
+  tags: string[];
+  // sizes: string[];
+  imageUrl: string;
+  slug: {
+    current: string;
+  };
   }
 
 export default function Section2() {
@@ -31,7 +31,7 @@ export default function Section2() {
       useEffect(() => {
         const fetchProducts = async () => {
           try {
-            const fetchedProducts = await client.fetch('*[_type == "product" && "featured" in tags]');
+            const fetchedProducts = await client.fetch('*[_type == "product" && "featured" in tags]{"imageUrl": productImage.asset->url,title,price,tags[],_id,dicountPercentage, description,"slug": slug.current,}');
             setProducts(fetchedProducts);
           } catch (err) {
             setError("Failed to load products. Please try again later.");
@@ -58,7 +58,7 @@ export default function Section2() {
       }
   return (
     <div>
-      <div className='lg:w-screen lg:h-[1652px] flex justify-center items-center '
+      <div className='lg:w-screen  flex justify-center items-center '
       >
         <div className='lg:w-[1124px] flex flex-col justify-center gap-10 items-center mt-5 h-full mb-10 md:mb-0'>
             <div className="text flex flex-col justify-center gap-3 items-center">
@@ -70,6 +70,7 @@ export default function Section2() {
             <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {products.map((item, index) => (
+        
           <motion.div
             key={item._id}
             className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full"
@@ -77,11 +78,13 @@ export default function Section2() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
+             {item.slug ? (
+                <Link href={`/shop/${item.slug.current || item.slug}`}>
             <div className="relative h-64 w-full">
-              {item.image ? (
+              {item.imageUrl ? (
                 <Image
-                  src={urlFor(item.image).url()}
-                  alt={item.name}
+                  src={urlFor(item.imageUrl).url()}
+                  alt={item.title}
                   layout="fill"
                   objectFit="cover"
                   className="transition-transform duration-300 hover:scale-110"
@@ -95,14 +98,14 @@ export default function Section2() {
             
             <div className="flex flex-col flex-grow p-6">
               <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-1">
-                {item.name}
+                {item.title}
               </h2>
               <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
                 {item.description}
               </p>
               <div className="flex justify-between items-center mb-4">
                 <span className="text-lg font-semibold text-green-600">
-                  ${item.price.toFixed(2)}
+                  ${item.price}
                 </span>
                 <div className="flex gap-2">
                   <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
@@ -111,19 +114,24 @@ export default function Section2() {
                   <div className="w-4 h-4 bg-gray-800 rounded-full"></div>
                 </div>
               </div>
-              {item.slug ? (
-                <Link href={`/shop/${item.slug.current || item.slug}`}>
-                  <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">
-                    View More
-                  </button>
+              
+            </div>
+                  
                 </Link>
               ) : (
                 <p className="text-red-500 text-center">Product unavailable</p>
-              )}
-            </div>
-          </motion.div>
+              )} 
+        </motion.div>
         ))}
+
       </div>
+    </div>
+    <div className="mb-5" >
+    <Link href="/shop">
+                  <button className="w-full bg-[#2DC071] text-white py-2 px-4 rounded-full hover:bg-green-700 transition duration-300">
+                   View All Products
+                  </button>
+                </Link>
     </div>
            
         </div>

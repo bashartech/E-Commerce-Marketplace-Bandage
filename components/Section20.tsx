@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 export default function Section20() {
   return (
@@ -23,7 +24,9 @@ export default function Section20() {
                         <p className='font-bold text-[14px] '>georgia.young@ple.com</p>
                         <p className='font-bold text-[16px] '>Get Support</p>
                         <div className="btn">
+                        <Link href={"/contact#contact"}>
                         <Button className='font-bold bg-transparent border-[#23A6F0] text-[#23A6F0] rounded-3xl border-[1px]  w-[189px] h-[54px] "> '>Submit Request</Button>
+                        </Link>
                         </div>
 
                     
@@ -39,7 +42,9 @@ export default function Section20() {
                         <p className='font-bold text-[14px] '>georgia.young@ple.com</p>
                         <p className='font-bold text-[16px] '>Get Support</p>
                         <div className="btn">
+                        <Link href={"/contact#contact"}>
                         <Button className='font-bold bg-transparent border-[#23A6F0] text-[#23A6F0] rounded-3xl border-[1px]  w-[189px] h-[54px] "> '>Submit Request</Button>
+                        </Link>
                         </div>
 
                     
@@ -55,7 +60,9 @@ export default function Section20() {
                         <p className='font-bold text-[14px] '>georgia.young@ple.com</p>
                         <p className='font-bold text-[16px] '>Get Support</p>
                         <div className="btn">
+                        <Link href={"/contact#contact"}>
                         <Button className='font-bold bg-transparent border-[#23A6F0] text-[#23A6F0] rounded-3xl border-[1px]  w-[189px] h-[54px] "> '>Submit Request</Button>
+                        </Link>
                         </div>
 
                     

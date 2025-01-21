@@ -12,10 +12,13 @@ export default function Footer() {
       <div className='md:w-screen md:h-[488px] md:flex justify-center items-center'>
         <div className='md:h-full md:w-[1050px] flex flex-col justify-center '>
             <div className='flex  md:justify-between justify-around'>
+              
+            <Link href={"/home"}>
                 <div className="logo font-bold text-[#252B42] text-[24px]">
                 Bandage
 
                 </div>
+             </Link>
                 <div className="links text-2xl flex gap-3 text-[#23A6F0]">
                 <i className='bx bxl-facebook-circle'  ></i>
                 <i className='bx bxl-instagram'></i>
@@ -37,8 +40,8 @@ export default function Footer() {
               <Link href={"/shop"}>
                 <p>Shopping</p>
               </Link>
-              <Link href={"/about"}>
-                <p>Blog</p>
+              <Link href={"/cart"}>
+                <p>Cart</p>
               </Link>
                </div>
                <div className='flex flex-col gap-3'>
@@ -54,8 +57,8 @@ export default function Footer() {
               <Link href={"/shop"}>
                 <p>Shopping</p>
               </Link>
-              <Link href={"/about"}>
-                <p>Blog</p>
+              <Link href={"/cart"}>
+                <p>Cart</p>
               </Link>
                </div>
                <div className='flex flex-col gap-3'>

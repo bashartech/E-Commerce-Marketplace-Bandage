@@ -65,7 +65,7 @@ export default function Header2() {
             </div>
               <i className="bx bx-heart text-2xl "></i>
               <i
-                className="bx bx-menu-alt-right text-2xl md:hidden"
+                className="bx bx-menu-alt-right text-2xl lg:hidden"
                 onClick={handleMenu}
               ></i>
             </div>
@@ -73,7 +73,7 @@ export default function Header2() {
         </div>
       </div>
       <div
-        className={`bar text-2xl md:hidden bg-white ${
+        className={`bar text-2xl lg:hidden bg-white ${
           isOpen ? " h-[350px] opacity-100" : "h-0 opacity-0"
         } `}
       >
@@ -85,17 +85,17 @@ export default function Header2() {
                 className="text-3xl text-center "
                 >Home</li>
               </Link>
-              <Link href={"/product"}>
+              <Link href={"/shop"}>
               <li
               onClick={handleClose}
               className="text-3xl text-center "
-              >Product</li> 
+              >Shop</li> 
               </Link>
-              <Link href={"/pricing"}>
+              <Link href={"/cart"}>
               <li
               onClick={handleClose}
             className="text-3xl text-center" 
-              >Pricing</li>
+              >Cart</li>
               </Link>
               
               <Link href={"/contact"}>
