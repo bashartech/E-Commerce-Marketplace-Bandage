@@ -29,48 +29,6 @@ async function getProduct(productSlug: string) {
   }
 }
 
-// const ProductLoader = () => {
-//   return (
-//     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-200 to-white">
-//       <motion.div
-//         className="w-32 h-32 border-t-4 border-blue-500 rounded-full"
-//         animate={{ rotate: 360 }}
-//         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-//       />
-//       <motion.h2
-//         className="mt-8 text-2xl font-semibold text-blue-900"
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: 1 }}
-//         transition={{ delay: 0.5, duration: 0.5 }}
-//       >
-//         Loading Product Details
-//       </motion.h2>
-//       <motion.div
-//         className="mt-4 flex space-x-2"
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: 1 }}
-//         transition={{ delay: 1, duration: 0.5 }}
-//       >
-//         {[0, 1, 2].map((index) => (
-//           <motion.div
-//             key={index}
-//             className="w-3 h-3 bg-blue-500 rounded-full"
-//             animate={{
-//               scale: [1, 1.5, 1],
-//               opacity: [1, 0.5, 1],
-//             }}
-//             transition={{
-//               duration: 1,
-//               repeat: Infinity,
-//               delay: index * 0.2,
-//             }}
-//           />
-//         ))}
-//       </motion.div>
-//     </div>
-//   );
-// };
-
 export default async function ProductPage({ params }: { params: { item: string } }) {
   const product = await getProduct(params.item);
 

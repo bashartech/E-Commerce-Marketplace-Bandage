@@ -222,8 +222,8 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from 'framer-motion';
-import { Search, ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {ChevronDown } from 'lucide-react';
 
 interface Product {
   _id: string;

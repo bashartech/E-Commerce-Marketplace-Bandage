@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function Section28() {
   const [formData, setFormData] = useState({
@@ -10,18 +10,25 @@ export default function Section28() {
     message: "",
   });
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e:any) => {
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    };
+    // const form = e.target as HTMLFormElement;
+
+    // const formData = {
+    //   // name: e.target.name.value,
+    //   // email: e.target.email.value,
+    //   // message: e.target.message.value,
+     
+    //   // name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+    //   // email: (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
+    //   // message: (form.elements.namedItem("message") as HTMLInputElement)?.value || "",
+    
+    // };
   
     try {
       const response = await fetch('/api/sendEmail', {

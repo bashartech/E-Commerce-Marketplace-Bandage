@@ -386,8 +386,7 @@
 
 "use client"
 
-import Loader from '@/components/loader'; 
-import { useState, useRef,useEffect  } from "react";
+import { useState,useEffect  } from "react";
 import { useCart } from "@/components/cartContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Loader2 } from 'lucide-react';
@@ -478,7 +477,6 @@ const LoadingOverlay = () => (
 );
 
 export default function Section9() {
-  const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
     // Simulate data fetching

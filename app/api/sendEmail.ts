@@ -1,6 +1,7 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
-export default async function handler(req:any, res:any) {
+export default async function handler(req:NextApiRequest, res:NextApiResponse) {
   if (req.method === "POST") {
     const { name, email, phone, issueType, message } = req.body;
 

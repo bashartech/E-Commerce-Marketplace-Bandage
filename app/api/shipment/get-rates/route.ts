@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     });
 
     return new Response(JSON.stringify(shipmentDetails), { status: 200 });
-  } catch (error:any) {
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: "An unknown error occurred." }), { status: 500 });
   }
 }
