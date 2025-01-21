@@ -486,7 +486,7 @@ export default function ProductDetails({ product }: { product: Product | null })
                     transition={{ delay: 0.8, duration: 0.5 }}
                   >
                     <motion.button
-                      className="bg-blue-900 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg"
+                      className="bg-blue-900 text-sm md:text-md hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() =>
@@ -504,7 +504,8 @@ export default function ProductDetails({ product }: { product: Product | null })
                     </motion.button>
                     <Link href="#reviews">
                     <motion.button
-                      className="bg-blue-900 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg"
+                      className="bg-blue-900
+                      text-sm md:text-md hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       
@@ -517,7 +518,10 @@ export default function ProductDetails({ product }: { product: Product | null })
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
+                      <div className="hidden lg:flex">
+
                       <svg
+                      
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
                         fill="none"
@@ -531,6 +535,7 @@ export default function ProductDetails({ product }: { product: Product | null })
                           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                         />
                       </svg>
+                      </div>
                     </motion.button>
                   </motion.div>
                 </div>
