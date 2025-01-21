@@ -265,7 +265,7 @@ export default function Section8() {
   }, []);
 
   const filterAndSortProducts = () => {
-    let filteredProducts = products.filter(product =>
+    const filteredProducts = products.filter(product =>
       product.title.toLowerCase().includes(searchBar.toLowerCase())
     );
 

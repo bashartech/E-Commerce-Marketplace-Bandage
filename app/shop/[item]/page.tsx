@@ -6,7 +6,6 @@ import Header2 from '@/components/Header2';
 import Footer from '@/components/Footer';
 import Section2 from '@/components/Section2';
 import Section29 from '@/components/Section29';
-import { motion } from 'framer-motion';
 
 
 async function getProduct(productSlug: string) {
