@@ -27,7 +27,7 @@ export default function Section9() {
     {isLoading ? (
         <Loader /> // Show loader while loading
       ) : (
-    <div>
+    <div className='relative z-10'>
     <div className="overflow-hidden">
     <Header2/>
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
@@ -47,7 +47,7 @@ export default function Section9() {
 
         {cartItems.length === 0 ? (
           <motion.div
-            className="text-center py-16"
+            className="text-center relative z-10 py-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -72,7 +72,7 @@ export default function Section9() {
               {cartItems.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4 items-center border-b border-gray-200 hover:bg-gray-50 transition-colors duration-150"
+                  className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4 items-center border-b border-gray-200 hover:bg-gray-50 relative z-10 transition-colors duration-150"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
