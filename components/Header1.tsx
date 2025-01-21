@@ -7,7 +7,7 @@ import React from 'react'
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
           />
-      <div className='w-screen h-[58px]  bg-[#252B42] hidden lg:flex text-white justify-center items-center '>
+      <div className='w-screen h-[58px]  bg-neutral-900 hidden lg:flex text-white justify-center items-center '>
         <div className='flex justify-between w-[90%]'>
             <div className="one flex gap-2 justify-center items-center">
                 <div className='flex gap-2 justify-center items-center'>

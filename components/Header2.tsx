@@ -18,12 +18,12 @@ export default function Header2() {
   const cartCount = cartItems.length
 
   return (
-    <div>
+    <div className="h-[65px]">
       <div
-        className=" w-screen h-[65px] flex justify-center
+        className=" w-screen bg-neutral-100  h-[65px] flex justify-center
        items-center"
       >
-        <div className=" w-[1049px] flex items-center justify-around md:justify-between h-[58px]">
+        <div className=" w-[1049px] flex items-center justify-around md:justify-between  h-[58px]">
           <div className="logo">
             <h1 className="font-bold text-[24px]">Bandage</h1>
           </div>
