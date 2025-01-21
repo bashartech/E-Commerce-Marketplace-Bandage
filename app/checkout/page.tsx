@@ -590,7 +590,7 @@ export default function Section9() {
         rel="stylesheet"
       />
     <Header2/>
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen relative zoom-in-105 bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}

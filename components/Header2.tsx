@@ -18,7 +18,7 @@ export default function Header2() {
   const cartCount = cartItems.length
 
   return (
-    <div className="h-[65px]">
+    <div className="">
       <div
         className=" w-screen bg-neutral-100  h-[65px] flex justify-center
        items-center"
@@ -78,7 +78,7 @@ export default function Header2() {
         } `}
       >
       
-        <ul className="  grid gap-10 mt-10 ">
+        <ul className="  grid gap-10 mt-3">
               <Link href={"/home"}>
                 <li
                 onClick={handleClose}
