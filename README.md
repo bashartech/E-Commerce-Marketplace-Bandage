@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # E-Commerce Marketplace [Bandage]
 
@@ -36,7 +36,7 @@ Documentation Details
 •	Step-by-step guidance on how the marketplace was built, from initial planning to the final deployment.
 •	Includes a detailed explanation of the tools and technologies used, such as Next.js, React, Tailwind CSS, and Node.js for the backend.
 
-=======
+
 E-Commerce Marketplace [Bandage]
 
 This repository contains a comprehensive E-Commerce Marketplace platform, Bandage, designed to provide users with an exceptional shopping experience. Customers can browse and purchase products tailored to their needs, including Chairs, Sofas, Tables, and Beds. With a wide range of product varieties, customers can explore options, compare features, and make informed purchase decisions.
@@ -73,7 +73,6 @@ Documentation Details
 •	Step-by-step guidance on how the marketplace was built, from initial planning to the final deployment.
 •	Includes a detailed explanation of the tools and technologies used, such as Next.js, React, Tailwind CSS, and Node.js for the backend.
 
->>>>>>> 5a3396e7e9af34f6694cca8bb6422435a7b80219
 2. Implementation Highlights
 •	        Features the modular structure of the    application, breaking down components such as:
 o	Product List and Filters: Dynamic rendering of product categories with customizable filters.
