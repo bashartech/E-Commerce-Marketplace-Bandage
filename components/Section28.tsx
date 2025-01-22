@@ -17,21 +17,9 @@ export default function Section28() {
 
 const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const form = e.target as HTMLFormElement;
-
-    // const formData = {
-    //   // name: e.target.name.value,
-    //   // email: e.target.email.value,
-    //   // message: e.target.message.value,
-     
-    //   // name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
-    //   // email: (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
-    //   // message: (form.elements.namedItem("message") as HTMLInputElement)?.value || "",
-    
-    // };
   
     try {
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('/api/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -42,8 +30,10 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
       if (!response.ok) {
         throw new Error(result.message || 'Something went wrong!');
       }
-  
       alert('Email sent successfully!');
+      console.log("Submitted Data:", formData);
+  console.log("Server Response:", result);
+
     } catch (error) {
       console.error('Error:', error);
       alert('An error occurred while submitting the form.');

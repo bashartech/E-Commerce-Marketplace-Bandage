@@ -1,8 +1,25 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Link from "next/link";
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { useCart } from "@/components/cartContext";
+import Image from 'next/image';
+import { Search, User, ShoppingBag, X,Home, List, ShoppingCart, Mail } from 'lucide-react';
+
+interface MenuItem {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}
+
+const menuItems: MenuItem[] = [
+  { href: "/home", label: "Home", icon: <Home className="w-5 h-5" /> },
+  { href: "/shop", label: "Shop", icon: <ShoppingBag className="w-5 h-5" /> },
+  { href: "/about", label: "About", icon: <List className="w-5 h-5" /> },
+  { href: "/cart", label: "Cart", icon: <ShoppingCart className="w-5 h-5" /> },
+  { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
+];
 
 export default function Header2() {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +89,8 @@ export default function Header2() {
           </div>
         </div>
       </div>
-      <div
+
+      {/* <div
         className={`bar text-2xl  lg:hidden bg-white ${
           isOpen ? " h-[350px] opacity-100" : "h-0 opacity-0"
         } `}
@@ -106,7 +124,106 @@ export default function Header2() {
               </Link>
               
             </ul>
+      </div> */}
+      <div id="mobile-menu"> {/* Assuming this is the div you want to replace */}
+      <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleClose}
+          />
+          <motion.div
+            className="fixed inset-y-0 left-0 w-80 bg-white shadow-lg z-50 overflow-hidden flex flex-col"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              {/* <Image src="/logo.svg" alt="Brand Logo" width={120} height={40} /> */}
+              <Link href={"/home"}>
+              <h2 className="font-bold text-lg">
+              BANDAGE
+              </h2>
+              </Link>
+
+              <motion.button
+                className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
+                onClick={handleClose}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <X className="w-6 h-6" />
+              </motion.button>
+            </div>
+
+            {/* <div className="p-4 border-b border-gray-200">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              </div>
+            </div> */}
+
+            <nav className="flex-grow overflow-y-auto py-4">
+              <ul className="space-y-2">
+                {menuItems.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href}>
+                      <motion.a
+                        className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                        onClick={handleClose}
+                        whileHover={{ x: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.icon}
+                        <span className="ml-3 text-lg font-medium">{item.label}</span>
+                      </motion.a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="p-4 border-t border-gray-200">
+              <Link href="/about">
+                <motion.a
+                  className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <User className="w-5 h-5 mr-3" />
+                  <span className="text-lg font-medium">My Account</span>
+                </motion.a>
+              </Link>
+            </div>
+
+            <div className="p-4">
+              <Link href={"/cart"}>
+              <motion.button
+                className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-lg shadow-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Cart
+              </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
       </div>
+
     </div>
   );
 }
