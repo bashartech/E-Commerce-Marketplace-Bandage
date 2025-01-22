@@ -1,4 +1,5 @@
 E-Commerce Marketplace [Bandage]
+
 This repository contains a comprehensive E-Commerce Marketplace platform, Bandage, designed to provide users with an exceptional shopping experience. Customers can browse and purchase products tailored to their needs, including Chairs, Sofas, Tables, and Beds. With a wide range of product varieties, customers can explore options, compare features, and make informed purchase decisions.
 
 Key Features of Bandage
