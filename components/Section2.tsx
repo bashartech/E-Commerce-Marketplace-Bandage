@@ -13,10 +13,7 @@ interface Product {
   price: number;
   discountPercentage: number;
   priceWithoutDiscount: number;
-  // rating: number;
-  // ratingCount: number;
   tags: string[];
-  // sizes: string[];
   imageUrl: string;
   slug: {
     current: string;

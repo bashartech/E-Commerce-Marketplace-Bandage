@@ -4,8 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useCart } from "@/components/cartContext";
-import Image from 'next/image';
-import { Search, User, ShoppingBag, X,Home, List, ShoppingCart, Mail } from 'lucide-react';
+import { User, ShoppingBag, X,Home, List, ShoppingCart, Mail } from 'lucide-react';
 
 interface MenuItem {
   href: string;
@@ -90,42 +89,7 @@ export default function Header2() {
         </div>
       </div>
 
-      {/* <div
-        className={`bar text-2xl  lg:hidden bg-white ${
-          isOpen ? " h-[350px] opacity-100" : "h-0 opacity-0"
-        } `}
-      >
-      
-        <ul className="  grid gap-10 mt-3">
-              <Link href={"/home"}>
-                <li
-                onClick={handleClose}
-                className="text-3xl text-center "
-                >Home</li>
-              </Link>
-              <Link href={"/shop"}>
-              <li
-              onClick={handleClose}
-              className="text-3xl text-center "
-              >Shop</li> 
-              </Link>
-              <Link href={"/cart"}>
-              <li
-              onClick={handleClose}
-            className="text-3xl text-center" 
-              >Cart</li>
-              </Link>
-              
-              <Link href={"/contact"}>
-              <li
-              onClick={handleClose}
-              className="text-3xl text-center "
-              >Contact</li>
-              </Link>
-              
-            </ul>
-      </div> */}
-      <div id="mobile-menu"> {/* Assuming this is the div you want to replace */}
+      <div id="mobile-menu"> 
       <AnimatePresence>
       {isOpen && (
         <>
@@ -144,7 +108,7 @@ export default function Header2() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              {/* <Image src="/logo.svg" alt="Brand Logo" width={120} height={40} /> */}
+             
               <Link href={"/home"}>
               <h2 className="font-bold text-lg">
               BANDAGE
@@ -160,19 +124,6 @@ export default function Header2() {
                 <X className="w-6 h-6" />
               </motion.button>
             </div>
-
-            {/* <div className="p-4 border-b border-gray-200">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              </div>
-            </div> */}
 
             <nav className="flex-grow overflow-y-auto py-4">
               <ul className="space-y-2">

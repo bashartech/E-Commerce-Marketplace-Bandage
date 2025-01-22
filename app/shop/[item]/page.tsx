@@ -55,27 +55,7 @@ export default async function ProductPage({ params }: { params: { item: string }
       </div>
         <Footer/>
     </div>
-    {/* <div className='overflow-hidden'>
-      <link
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet"
-      />
-      
-      <Header2 />
-      <div className="min-h-screen bg-gradient-to-br from-gray-200 to-white text-white p-4 sm:p-8">
-        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-900">
-          Product Details
-        </h1>
-        <Suspense fallback={<ProductLoader />}>
-          <ProductDetails product={product} />
-        </Suspense>
-      </div>
-      <div>
-        <Section2 />
-        <Section29 />
-      </div>
-      <Footer />
-    </div> */}
+    
     </>
   );
 }
