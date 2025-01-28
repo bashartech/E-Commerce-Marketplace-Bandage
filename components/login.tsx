@@ -9,7 +9,7 @@ export default function LoginForm() {
     password: "",
   });
 
-  const handleChange = (e:any) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -30,18 +30,10 @@ export default function LoginForm() {
     setFormData({ name: "", email: "", password: "" });
    };
 
-// export default function FetchPage() {
-    // const [fetchApiData, setFetchApiData] = useState(false)
-    // useEffect(()=>{
-    //     const fetchData = async () => {
-    //         const response = await fetch("https://jsonplaceholder.typicode.com/users")
-    //         const data = response.json()
-    //     }
-    // })
 
-    const onsubmit =  (data:any) => {
-  console.log(data)
-    }
+  //   const onsubmit =  (data:any) => {
+  // console.log(data)
+  //   }
 
   return (
     
