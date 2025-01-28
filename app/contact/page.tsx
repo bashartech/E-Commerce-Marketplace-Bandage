@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Loader from '@/components/loader'; 
 import Footer from '@/components/Footer'
-import Header3 from '@/components/Header3'
+import Header2 from '@/components/Header3'
 import Section19 from '@/components/Section19'
 import Section20 from '@/components/Section20'
 import Section21 from '@/components/Section21'
@@ -22,7 +22,7 @@ export default function ContactPage() {
         <Loader /> // Show loader while loading
       ) : (
       <>
-        <Header3/>
+        <Header2/>
       <Section19/>
       <Section28/>
       <Section20/>

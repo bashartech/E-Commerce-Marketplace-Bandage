@@ -25,6 +25,10 @@ interface OrderConfirmation {
 //   rateId: string;
   shipDate: string;
   userDetails: ShippingDetails;
+  orderSummary: {
+    items: Array<{ title: string; quantity: number; price: number }>;
+    totalPrice: number;
+  };
 }
 
 const OrderConfirmationDrawer = ({ isOpen, onClose, orderDetails }: { isOpen: boolean; onClose: () => void; orderDetails: OrderConfirmation }) => {
@@ -46,6 +50,19 @@ const OrderConfirmationDrawer = ({ isOpen, onClose, orderDetails }: { isOpen: bo
               </button>
             </div>
             <div className="space-y-4">
+            <h3 className="font-semibold text-lg text-gray-700">Order Summary</h3>
+                {orderDetails.orderSummary.items.map((item, index) => (
+                  <div key={index} className="flex justify-between text-sm">
+                    <span>{item.title}</span>
+                    <span>{item.quantity} x ${item.price.toFixed(2)}</span>
+                  </div>
+                ))}
+                <div className="mt-2 pt-2 border-t border-gray-200 flex justify-between font-semibold">
+                  <span>Total</span>
+                  <span>${orderDetails.orderSummary.totalPrice.toFixed(2)}</span>
+                </div>
+              </div>
+              <div>
               <div>
                 <h3 className="font-semibold text-lg text-gray-700">Shipment Details</h3>
                 <p>Shipment ID: {orderDetails.shipmentId}</p>
@@ -133,6 +150,12 @@ export default function Section9() {
     setError("");
     setIsLoading(true);
 
+    // try {
+      
+    // } catch (error) {
+    //   console.log(error)
+    // }
+
     try {
       const response = await fetch("/api/shipment/get-rates", {
         method: "POST",
@@ -154,19 +177,36 @@ export default function Section9() {
           packages: [
             { weight: { value: 5, unit: "ounce" }, dimensions: { height: 3, width: 15, length: 10, unit: "inch" } },
           ],
+          name: shippingDetails.name,
+          // productName: orderConfirmation?.orderSummary.items , // You might want to generate a unique order title
+          orderItems: cartItems.map(item => ({
+            productName: item.title,
+            quantity: item.quantity,
+            price: item.price
+          })),
+          totalprice: totalPrice(),
+          
         }),
       });
-
       if (!response.ok) {
         throw new Error('Failed to get shipping rates');
       }
 
       const data = await response.json();
+      console.log(data)
       const confirmation: OrderConfirmation = {
         shipmentId: data.shipmentId,
         // rateId: data.rateResponse.rates[0].rateId,
         shipDate: data.shipDate,
         userDetails: shippingDetails,
+        orderSummary: {
+          items: cartItems.map(item => ({
+            title: item.title,
+            quantity: item.quantity,
+            price: item.price
+          })),
+          totalPrice: totalPrice()
+        }
       };
 
       setOrderConfirmation(confirmation);

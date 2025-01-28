@@ -16,7 +16,7 @@ const menuItems: MenuItem[] = [
   { href: "/home", label: "Home", icon: <Home className="w-5 h-5" /> },
   { href: "/shop", label: "Shop", icon: <ShoppingBag className="w-5 h-5" /> },
   { href: "/about", label: "About", icon: <List className="w-5 h-5" /> },
-  { href: "/cart", label: "Cart", icon: <ShoppingCart className="w-5 h-5" /> },
+  { href: "/register", label: "Login", icon: <ShoppingCart className="w-5 h-5" /> },
   { href: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
 ];
 
@@ -66,9 +66,11 @@ export default function Header2() {
             </ul>
           </div>
           <div className="links flex gap-4 text-[#23A6F0]">
+            <Link href={"/register"}>
             <p className="font-bold text-[#23A6F0] md:flex hidden">
               Login / Register
             </p>
+            </Link>
             <div className=" text-lg flex justify-center items-center gap-2">
               <i className="bx bx-search-alt-2"></i>
             
