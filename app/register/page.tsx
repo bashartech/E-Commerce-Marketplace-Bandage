@@ -106,12 +106,12 @@ const SignUpForm = () => {
       });
 
       const newRes = response.json()
-      if (newRes.success) {
-        localStorage.setItem("token", newRes.token);
-        toast.success("You are successfully logged in");
-      } else {
-        toast.error(response.error);
-      }
+      // if (newRes.success) {
+      //   localStorage.setItem("token", newRes.token);
+      //   toast.success("You are successfully logged in");
+      // } else {
+      //   toast.error(response.error);
+      // }
 
       if (newRes.ok) {
         setIsSuccess(true);

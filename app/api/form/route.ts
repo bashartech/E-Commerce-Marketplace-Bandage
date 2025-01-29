@@ -69,7 +69,7 @@ export const POST = async (req: Request, res: NextApiResponse) => {
    // Respond with success
    return NextResponse.json(
     { message: "User created successfully", user: result },
-    { status: 201 },token
+    { status: 201 }
   );
 
   } catch (error) {
