@@ -109,16 +109,26 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Customer Name',
-      type: 'string',
-      validation: (Rule: any) => Rule.required().min(2).max(50),
-    },
-    {
       name: 'totalprice',
       title: 'Total Price',
       type: 'number',
       validation: (Rule: any) => Rule.required().positive(),
+    },
+    {
+      name: 'orderItems',
+      title: 'Order Items',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'productName', type: 'string' },
+            { name: 'quantity', type: 'number' },
+            { name: 'price', type: 'number' }
+          ]
+        }
+      ],
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'packages',
@@ -143,22 +153,7 @@ export default {
       ],
       validation: (Rule: any) => Rule.required(),
     },
-    {
-      name: 'orderItems',
-      title: 'Order Items',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            { name: 'productName', type: 'string' },
-            { name: 'quantity', type: 'number' },
-            { name: 'price', type: 'number' }
-          ]
-        }
-      ],
-      validation: (Rule: any) => Rule.required(),
-    },
+    
     {
       name: 'shipToAddress',
       title: 'Shipping Details',

@@ -1,26 +1,4 @@
 
-
-// import { NextResponse } from "next/server";
-// import { signUpSchema } from "../validation/route";
-// import bcrypt from "bcrypt"
-
-// export const POST = async (req:Request) => {
-//  const data = await req.json()
-//  console.log(data)
-//  const result = await signUpSchema.safeParseAsync(data)
- 
-//  if(result.success == false){
-//     return NextResponse.json({message : "Validation Error", error:result.error}, {status:400})
-   
-//  }
-//  const roundSalt = await bcrypt.genSalt(11)
-//  const hashPassword = await bcrypt.hash(data?.password, roundSalt)
- 
-//  console.log("Validation succesful",result.data,hashPassword)
-
-//  return NextResponse.json({message: "success", data: {password: data.password, hashPassword}}, {status:201})
-// }
-
 import { NextResponse } from "next/server";
 import {client} from "@/sanity/lib/client"; // Update this path as necessary
 import bcrypt from "bcrypt";

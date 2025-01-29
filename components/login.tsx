@@ -31,10 +31,6 @@ export default function LoginForm() {
    };
 
 
-  //   const onsubmit =  (data:any) => {
-  // console.log(data)
-  //   }
-
   return (
     
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

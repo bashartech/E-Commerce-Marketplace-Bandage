@@ -40,16 +40,12 @@ export async function POST(req: NextRequest) {
         ].filter(Boolean),
       },
     });
-  // const orderName = productName.title
-  // console.log(orderName)
-  // const orderPrice = productName.Price
+  
     // Save user to Sanity
         const result = await client.create({
           _type: "orderSummary",
           shipToAddress,
           packages,
-          // orderName,
-          // orderPrice,
           orderItems,
           totalprice,
           shipmentDetails: shipmentDetails
