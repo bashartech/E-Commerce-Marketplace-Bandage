@@ -105,7 +105,7 @@ const SignUpForm = () => {
         body: JSON.stringify(data),
       });
 
-      const newRes = response.json()
+      // const newRes = response.json()
       // if (newRes.success) {
       //   localStorage.setItem("token", newRes.token);
       //   toast.success("You are successfully logged in");
@@ -113,7 +113,7 @@ const SignUpForm = () => {
       //   toast.error(response.error);
       // }
 
-      if (newRes.ok) {
+      if (response.ok) {
         setIsSuccess(true);
         router.push('/')
         reset();
