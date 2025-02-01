@@ -4,6 +4,7 @@
 import { useState,useEffect  } from "react";
 import { useCart } from "@/components/cartContext";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link"
 import { X, Loader2 } from 'lucide-react';
 import Header2 from "@/components/Header2";
 
@@ -17,7 +18,9 @@ interface ShippingDetails {
   postalCode: string;
   country: string;
   addressResidentialIndicator: "yes" | "no";
-  paymentMethod: "creditCard" | "paypal" | "bankTransfer";
+  // paymentMethod: "creditCard" | "paypal" | "bankTransfer";
+  paymentMethod: string;
+
 }
 
 interface OrderConfirmation {
@@ -82,8 +85,22 @@ const OrderConfirmationDrawer = ({ isOpen, onClose, orderDetails }: { isOpen: bo
                 <p>Phone: {orderDetails.userDetails.phone}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-gray-700">Payment Method</h3>
-                <p>{orderDetails.userDetails.paymentMethod}</p>
+                {/* <h3 className="font-semibold text-lg text-gray-700">Payment Method</h3>
+                <p>{orderDetails.userDetails.paymentMethod}</p> */}
+                 <div className="mt-6">
+                  <Link href="/payment">
+              <motion.button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                // disabled={isLoading}
+              >
+                Proceed To Payment
+                {/* {isLoading ? 'Processing...' : 'Submit Order'} */}
+              </motion.button>
+                  </Link>
+            </div>
               </div>
             </div>
           </div>
@@ -194,37 +211,43 @@ export default function Section9() {
 
       const data = await response.json();
       console.log(data)
-      const confirmation: OrderConfirmation = {
-        shipmentId: data.shipmentId,
-        // rateId: data.rateResponse.rates[0].rateId,
-        shipDate: data.shipDate,
-        userDetails: shippingDetails,
-        orderSummary: {
-          items: cartItems.map(item => ({
-            title: item.title,
-            quantity: item.quantity,
-            price: item.price
-          })),
-          totalPrice: totalPrice()
-        }
-      };
 
-      setOrderConfirmation(confirmation);
-      setIsDrawerOpen(true);
+      if(data.url){
+
+      }else{
+        const confirmation: OrderConfirmation = {
+          shipmentId: data.shipmentId,
+          // rateId: data.rateResponse.rates[0].rateId,
+          shipDate: data.shipDate,
+          userDetails: shippingDetails,
+          orderSummary: {
+            items: cartItems.map(item => ({
+              title: item.title,
+              quantity: item.quantity,
+              price: item.price
+            })),
+            totalPrice: totalPrice()
+          }
+        };
+        setOrderConfirmation(confirmation);
+        setIsDrawerOpen(true);
+
+        // Clear form details
+        setShippingDetails({
+          name: "",
+          phone: "",
+          addressLine1: "",
+          addressLine2: "",
+          city: "",
+          state: "",
+          postalCode: "",
+          country: "",
+          addressResidentialIndicator: "yes",
+          paymentMethod: "creditCard",
+        });
+      }
+
       
-      // Clear form details
-      setShippingDetails({
-        name: "",
-        phone: "",
-        addressLine1: "",
-        addressLine2: "",
-        city: "",
-        state: "",
-        postalCode: "",
-        country: "",
-        addressResidentialIndicator: "yes",
-        paymentMethod: "creditCard",
-      });
     } catch (error) {
       console.error('Error submitting order:', error);
       setError('An error occurred while processing your order. Please try again.');
@@ -396,7 +419,7 @@ export default function Section9() {
             </div>
 
             {/* Payment Method Selection */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700">Payment Method</label>
               <select
                 id="paymentMethod"
@@ -410,7 +433,7 @@ export default function Section9() {
                 <option value="paypal">PayPal</option>
                 <option value="bankTransfer">Bank Transfer</option>
               </select>
-            </div>
+            </div> */}
 
             {/* Submit Button */}
             <div className="mt-6">
