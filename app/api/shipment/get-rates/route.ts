@@ -1,11 +1,11 @@
 import { shipEngine } from "@/libs/helper/shipEngine";
 import { client } from "@/sanity/lib/client";
 import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe"
+// import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!,{
-  apiVersion: "2025-01-27.acacia",
-})
+// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!,{
+//   apiVersion: "2025-01-27.acacia",
+// })
 
 export async function POST(req: NextRequest) {
   const { shipToAddress, packages, name, orderItems, totalprice } = await req.json();

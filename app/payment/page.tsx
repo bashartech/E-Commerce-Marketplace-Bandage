@@ -12,7 +12,7 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-export default function page() {
+export default function PaymentPage() {
 
     const { totalPrice } = useCart();
 
