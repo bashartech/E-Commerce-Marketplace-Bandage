@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useCart } from "@/components/cartContext";
 import Header2 from "@/components/Header2";
+import AuthGuard from '@/components/AuthGuard';
 
 export default function Section9() {
   const {
@@ -23,7 +24,10 @@ export default function Section9() {
     return () => clearTimeout(timeout); // Cleanup on component unmount
   }, []);
   return (
+    <AuthGuard>
     <>
+
+  
     {isLoading ? (
         <Loader /> // Show loader while loading
       ) : (
@@ -188,5 +192,6 @@ export default function Section9() {
        </div>
       )}
     </>
+        </AuthGuard>
   );
 }

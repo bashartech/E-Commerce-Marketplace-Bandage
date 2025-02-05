@@ -6,7 +6,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
+      name: 'username',
       title: 'Name',
       type: 'string',
     }),

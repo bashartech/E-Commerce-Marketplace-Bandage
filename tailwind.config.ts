@@ -8,7 +8,6 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
